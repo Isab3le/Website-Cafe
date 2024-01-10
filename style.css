@@ -33,6 +33,10 @@ img {
 body {
   color: var(--text-color);
 }
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
 header {
   position: fixed;
@@ -135,23 +139,25 @@ header.shadow {
   grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
   align-items: center;
   gap: 1.5rem;
+  padding-top: 1px;
 }
 
 .home-text h1 {
-  font-size: 3.4rem;
+  font-size: 5rem;
   color: var(--main-color);
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
 .home-text p {
-  font-size: 0.938rem;
+  font-size: 1rem;
   color: var(--bg-color);
   margin: 0.5rem 0 1.4rem;
 }
 
 .btn {
-  padding: 10px 40px;
+  padding: 10px 30px;
   border-radius: 0.5rem;
   background-position: var(--main-color);
   color: var(--bg-color);
@@ -180,6 +186,7 @@ header.shadow {
 }
 
 .about-text p {
+  text-align: justify;
   font-size: 0.938rem;
   margin: 0.5rem 0 1.1rem;
 }
@@ -195,7 +202,7 @@ header.shadow {
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(3, 1fr);
   gap: 5rem;
   margin-top: 2rem;
 }
@@ -215,7 +222,7 @@ header.shadow {
   height: 250px;
   object-fit: contain;
   object-position: center;
-  padding: 20px;
+  padding: 10px;
   background: #f1f1f1;
   border-radius: 0.5rem;
 }
@@ -257,10 +264,46 @@ header.shadow {
 
 .customers-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, auto));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
   margin-top: 2rem;
+  justify-content: center;
+  align-items: stretch;
 }
+
+.customers-container .box {
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 280px; /* Defina um tamanho máximo para as caixas na horizontal */
+  margin: 0 auto; /* Centraliza as caixas na horizontal */
+}
+
+.customers-container .box img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto; /* Centraliza a imagem na horizontal */
+  display: block; /* Remove espaçamento extra abaixo da imagem */
+}
+
+.customers-container .box h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.5rem;
+  min-height: 50px;
+}
+
+.customers-container .box p {
+  font-size: 0.938rem;
+  margin-bottom: 10px;
+}
+
 
 .customers-container .box {
   padding: 20px;
@@ -296,6 +339,7 @@ header.shadow {
 }
 
 .footer {
+  background: var(--second-color);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, auto));
   gap: 1.5rem;
@@ -322,7 +366,7 @@ header.shadow {
   font-size: 24px;
   color: var(--text-color);
   padding: 10px;
-  background: var(--second-color);
+  background: #f1f1f1;
   border-radius: 0.2rem;
 }
 
